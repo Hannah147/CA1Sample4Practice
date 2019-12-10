@@ -7,8 +7,9 @@ using static System.Console;
 
 namespace CA1Sample4Practice
 {
-    public class Program
+    class Program
     {
+        private static Random rng = new Random();
         static void Main(string[] args)
         {
             // Question 7
@@ -40,6 +41,12 @@ namespace CA1Sample4Practice
             WriteLine("\nSorting the playlist by Artist, then Song Title\n");
 
             Display(PlayList);
+
+            WriteLine("\nShuffling the Playlist...\n");
+
+            Shuffle(PlayList);
+
+            Display(PlayList);
         }
 
         // Question 9
@@ -50,6 +57,19 @@ namespace CA1Sample4Practice
             foreach(var s in playlist)
             {
                 WriteLine($"{s.Artist, -20}{s.Title, -25}{s.Duration, -10}{s.Genre, -10}");
+            }
+        }
+
+        private static void Shuffle(List<Song> playlist)
+        {
+            int n = playlist.Count;
+            while(n > 1)
+            {
+                n--;
+                int k = rng.Next(n + 1);
+                Song value = playlist[k];
+                playlist[k] = playlist[n];
+                playlist[n] = value;
             }
         }
     }

@@ -8,7 +8,7 @@ namespace CA1Sample4Practice
 {
     public enum Genre { Rock, Pop, Dance, Other}
     // Question 2
-    class Song:IComparable
+    public class Song:IComparable
     {
         // Question 4
         public string Title { get; set; }
