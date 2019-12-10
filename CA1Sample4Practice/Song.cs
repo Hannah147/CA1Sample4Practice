@@ -8,7 +8,7 @@ namespace CA1Sample4Practice
 {
     public enum Genre { Rock, Pop, Dance, Other}
     // Question 2
-    class Song
+    class Song:IComparable
     {
         // Question 4
         public string Title { get; set; }
@@ -32,6 +32,17 @@ namespace CA1Sample4Practice
         public override string ToString()
         {
             return $"{Artist} {Title} {Duration} {Genre}";
+        }
+
+        public int CompareTo(object other)
+        {
+            Song that = (Song)other;
+            int returnValue = this.Artist.CompareTo(that.Artist);
+            if (returnValue == 0)
+            {
+                returnValue = this.Title.CompareTo(that.Title);
+            }
+            return returnValue;
         }
     }
 }

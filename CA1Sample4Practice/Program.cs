@@ -7,7 +7,7 @@ using static System.Console;
 
 namespace CA1Sample4Practice
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
