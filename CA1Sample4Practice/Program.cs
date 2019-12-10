@@ -34,6 +34,12 @@ namespace CA1Sample4Practice
             PlayList.Add(s5);
 
             Display(PlayList);
+
+            PlayList.Sort();
+
+            WriteLine("\nSorting the playlist by Artist, then Song Title\n");
+
+            Display(PlayList);
         }
 
         // Question 9
